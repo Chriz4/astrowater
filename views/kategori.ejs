@@ -1,22 +1,18 @@
 <div class="kategori">
-  <h4>Kategori produk</h4>
-  <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
-    <div class="carousel-inner">
 
-      <%- include("./kategori-item") %>
-      <%- include("./kategori-item") %>
-      <%- include("./kategori-item") %>
-      <%- include("./kategori-item") %>
-      <%- include("./kategori-item") %>
+  <h2 class="text-center" id="kategori"><a href="#kategori" style="text-decoration: none; color: black;"> Kategori barang</a></h2>
+  <div class="row mt-3">
 
+    <% kategori_list.forEach((data, index) => { %>
+    <div class="col-lg-3 col-md-6 col-sm-6 text-center my-4">
+      <div class="card" style=" background-color: #6EEAD8;"> <!-- color alt #beea6e-->
+        <img class="card-img-top" src=<%= data.img_source %> alt=<%= data.nama %>>
+        <div class="card-body">
+          <p class="card-text" style="font-weight: bold;"> <%= data.nama %> </p>
+        </div>
+      </div>
     </div>
-    <button type="button" class="carousel-control-prev" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button type="button" class="carousel-control-next" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <% }) %>
+
   </div>
 </div>

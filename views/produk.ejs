@@ -1,7 +1,64 @@
-<h4>Produk</h4>
-<div class="row">
-  <%- include("./produk-item") %>
-  <%- include("./produk-item") %>
-  <%- include("./produk-item") %>
-  <%- include("./produk-item") %>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("./header") %>
+    <title>Produk | Astrowater Solution</title>
+</head>
+
+<body>
+  <%- include("./info-box") %>
+  <%- include("./navbar") %>
+    <!-- <h1>Hello, world</h1> -->
+
+  <div class="container overflow-hidden">
+    <div class="row vh-100">
+      <div class="col-sm-12 col-md-12 col-lg-3 pt-3 d-flex sticky-top">
+        <div
+          class="d-block text-center text-lg-start flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2">
+          <button type="button" class="btn btn-primary d-lg-none" data-bs-toggle="collapse"
+            data-bs-target="#kategori">
+            Tampilkan Kategori
+          </button>
+          <ul class="collapse d-lg-block show list-group list-group-flush" id="kategori">
+            <li class="list-group-item">AKSESORIS</li>
+            <li class="list-group-item">BOOSTER PUMP</li>
+            <li class="list-group-item">CARBON</li>
+            <li class="list-group-item">GALON AIR</li>
+            <li class="list-group-item">FILTER AIR</li>
+            <li class="list-group-item">HOUSING FILTER</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-12 col-lg-9 d-flex flex-column h-sm-100">
+        <div class="row overflow-auto">
+          <% produk_list.forEach((data, index)=> { %>
+            <div class="col-md-6 col-lg-4 col-sm-6 mb-3 pt-4">
+              <div class="card">
+                <img class="card-img-top" alt="designated image" src=<%=data.img_source %> >
+                <div class="card-body" style=" background-color: #6EEAD8;">
+                  <h5 class="card-title">
+                    <%=data.nama_produk %>
+                  </h5>
+                  <p class="card-text">
+                    Rp 12.000.000,-
+                  </p>
+                  <a href="#" class="btn btn-outline-primary">Lihat Produk</a>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <!-- javascript dan jquery -->
+    <%- include("./add-script.ejs") %>
+</body>
+
+</html>
