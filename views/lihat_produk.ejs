@@ -11,11 +11,14 @@
   <div class="container mt-5">
 
     <h2>Detil Produk</h2>
-    <p>AKSESORIS > CARBON</p>
+    <p style="font-size:25px ;"> 
+      <a href="/produk/<%= nomor_kategori %>"> <%= nama_kategori  %> </a> &gt &gt <%= dataBarang['nama_produk']  %> 
+      </p>
     <div class="row my-3">
 
       <div class="col-md-4">
-        <img src="images/produk/carbon-cropped.png" alt="carbon" class="img-fluid">
+        
+        <img src="<%= dataBarang['img_source'] %>" alt="carbon" class="img-fluid">
       </div>
 
       <div class="col-md-8">
