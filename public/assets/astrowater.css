@@ -104,9 +104,12 @@ a {
   text-decoration: none;
 }
 
+
 a > p {
   color: black;
 }
+
+
 
 @media (min-width: 576px) {
   .h-sm-100 {
@@ -115,7 +118,7 @@ a > p {
 }
 
 ul > li:hover {
-  background-color: black;
+  background-color: white;
   opacity: 0.5;
   color: beige;
 }

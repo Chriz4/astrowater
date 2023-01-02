@@ -21,16 +21,26 @@
             Tampilkan Kategori
           </button>
           <ul class="collapse d-lg-block show list-group list-group-flush" id="kategori">
-            <li class="list-group-item">AKSESORIS</li>
-            <li class="list-group-item">BOOSTER PUMP</li>
-            <li class="list-group-item">CARBON</li>
-            <li class="list-group-item">GALON AIR</li>
-            <li class="list-group-item">FILTER AIR</li>
-            <li class="list-group-item">HOUSING FILTER</li>
+            <% kategoriList.forEach(kategori => { %>
+            <li class="list-group-item">
+              <a href="/produk/<%= kategori.nomor %>" style="color: black;" >
+                <%= kategori.nama.toUpperCase() %>
+
+              </a>
+            </li>
+            <% }) %>
+            
           </ul>
         </div>
       </div>
 
+      <% if(withParams == false) { %>
+      <div class="col-sm-12 col-md-12 col-lg-9 d-flex flex-column h-sm-100">
+        <h1>Silahkan pilih kategori di kiri</h1>
+      </div>
+      <% } %>
+
+      <% if(withParams == true) { %>
       <div class="col-sm-12 col-md-12 col-lg-9 d-flex flex-column h-sm-100">
         <div class="row overflow-auto">
           <% produk_list.forEach((data, index)=> { %>
@@ -53,6 +63,7 @@
 
         </div>
       </div>
+      <% } %>
 
     </div>
   </div>
